@@ -17,13 +17,35 @@ npm install --save-dev robotstxt-webpack-plugin
 ## Usage
 
 ```js
-// Comming soon
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+
+const options = {}; // see options below
+
+module.exports = {
+  plugins: [
+    new RobotstxtPlugin(options)
+  ]
+}
+```
+
+Or
+
+```js
+import RobotstxtPlugin from 'robotstxt-webpack-plugin';
+
+const options = {}; // see options below
+
+export default {
+  plugins: [
+    new RobotstxtPlugin(options)
+  ]
+};
 ```
 
 ## Options
 
 - `General options` - see [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
-- `dest` - (optional) directory which will be saved robots.txt (relative).
+- `dest` - (optional) directory which will be saved robots.txt (relatively of the option `output.path` value).
 
 ## Related
 
