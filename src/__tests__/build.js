@@ -67,8 +67,6 @@ test.cb('should execute successfully using `dest` option', (t) => {
             throw error;
         }
 
-        // console.log(stats.compilation.assets);
-
         t.true(stats.compilation.errors.length === 0, 'no compilation error');
         t.true(stats.compilation.assets[path.join(options.dest, 'robots.txt')] !== null, 'robots.txt in assets');
         t.true(stats.compilation.assets[path.join(options.dest, 'robots.txt')].size() > 0);

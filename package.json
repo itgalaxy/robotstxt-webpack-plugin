@@ -1,6 +1,6 @@
 {
     "name": "robotstxt-webpack-plugin",
-    "version": "0.0.1",
+    "version": "1.0.0-alpha.1",
     "description": "A webpack plugin to output a robots.txt file",
     "license": "MIT",
     "author": "itgalaxy <development@itgalaxy.company>",
@@ -16,28 +16,15 @@
         "url": "https://github.com/itgalaxy/robotstxt-webpack-plugin"
     },
     "keywords": [
-        "cli",
-        "standalone",
-        "font",
-        "fonts",
-        "webfont",
-        "webfonts",
-        "svg",
-        "ttf",
-        "woff",
-        "woff2",
-        "otf",
-        "ttf",
-        "woff",
-        "eot",
-        "svg",
-        "ttf2eot",
-        "ttf2woff",
-        "ttf2svg",
-        "svg2ttf",
-        "css",
-        "scss",
-        "webpack"
+        "robots.txt",
+        "robots",
+        "robotstxt",
+        "generate",
+        "robots-txt",
+        "user-agent",
+        "webpack",
+        "webpack-plugin",
+        "plugin"
     ],
     "bugs": {
         "url": "https://github.com/itgalaxy/robotstxt-webpack-plugin/issues"
