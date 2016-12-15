@@ -35,7 +35,8 @@
         "!**/__tests__"
     ],
     "dependencies": {
-        "generate-robotstxt": "^4.0.0"
+        "generate-robotstxt": "^4.0.0",
+        "nodeify": "~1.0.0"
     },
     "devDependencies": {
         "ava": "^0.17.0",
