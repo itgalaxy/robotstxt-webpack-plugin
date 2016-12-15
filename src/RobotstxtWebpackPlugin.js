@@ -1,3 +1,4 @@
+import nodeify from 'nodeify';
 import path from 'path';
 import robotstxt from 'generate-robotstxt';
 
@@ -13,26 +14,29 @@ export default class RobotstxtWebpackPlugin {
     generate(compilation, callback) {
         const options = this.options;
 
-        return robotstxt(options)
-            .then((contents) => {
-                const dest = options.dest ? path.join(options.dest, 'robots.txt') : 'robots.txt';
+        return nodeify(
+            robotstxt(options)
+                .then((contents) => {
+                    const dest = options.dest ? path.join(options.dest, 'robots.txt') : 'robots.txt';
 
-                compilation.assets[dest] = {
-                    size() {
-                        return Buffer.byteLength(this.source(), 'utf8');
-                    },
-                    source() {
-                        return contents;
-                    }
-                };
+                    compilation.assets[dest] = {
+                        size() {
+                            return Buffer.byteLength(this.source(), 'utf8');
+                        },
+                        source() {
+                            return contents;
+                        }
+                    };
 
-                return contents;
-            })
-            .then(() => callback())
-            .catch((error) => {
-                compilation.errors.push(error);
+                    return contents;
+                }),
+            (error) => {
+                if (error) {
+                    compilation.errors.push(error);
+                }
 
                 return callback();
-            });
+            }
+        );
     }
 }
