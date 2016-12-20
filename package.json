@@ -63,7 +63,7 @@
         "package-schema": "^1.0.0",
         "remark-cli": "^2.0.0",
         "remark-lint": "^5.0.0",
-        "remark-preset-lint-itgalaxy": "^3.0.0",
+        "remark-preset-lint-itgalaxy": "^4.0.0",
         "webpack": "^1.13.0"
     },
     "scripts": {
