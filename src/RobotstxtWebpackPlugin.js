@@ -12,7 +12,7 @@ export default class RobotstxtWebpackPlugin {
     }
 
     generate(compilation, callback) {
-        const options = this.options;
+        const { options } = this;
 
         return nodeify(
             robotstxt(options)
