@@ -64,7 +64,10 @@
         "remark-cli": "^2.0.0",
         "remark-lint": "^5.0.0",
         "remark-preset-lint-itgalaxy": "^4.0.0",
-        "webpack": "^1.13.0"
+        "webpack": "^2.2.1"
+    },
+    "peerDependencies": {
+        "webpack": "^1.13.2 || ^2.2.1"
     },
     "scripts": {
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
