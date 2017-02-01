@@ -4,11 +4,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-# Head
+# 1.0.1 - 2017-02-01
 
 - Fixed: added `webpack` as peer dependencies.
 
-# 1.0.0
+# 1.0.0 - 2016-11-11
 
 - Documentation: improve `README.md`.
 
