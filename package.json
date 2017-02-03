@@ -39,7 +39,7 @@
         "nodeify": "~1.0.0"
     },
     "devDependencies": {
-        "ava": "^0.17.0",
+        "ava": "^0.18.0",
         "ajv-cli": "^1.1.0",
         "babel-cli": "^6.11.0",
         "babel-core": "^6.11.0",
