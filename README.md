@@ -44,12 +44,12 @@ export default {
 
 ## Options
 
-- `General options` - see [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
-- `dest` - (optional) directory which will be saved robots.txt (relatively of the option `output.path` value).
+-   `General options` - see [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
+-   `dest` - (optional) directory which will be saved robots.txt (relatively of the option `output.path` value).
 
 ## Related
 
-- [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) - api for this package.
+-   [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) - api for this package.
 
 ## Contribution
 
