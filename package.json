@@ -71,7 +71,7 @@
         "prettier": "^1.4.2"
     },
     "peerDependencies": {
-        "webpack": "^1.13.2 || ^2.2.1"
+        "webpack": "^3.0.0-rc.1"
     },
     "scripts": {
         "coveralls": "nyc report --reporter=text-lcov | coveralls",
