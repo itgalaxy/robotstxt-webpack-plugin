@@ -8,6 +8,7 @@
 
 Webpack plugin for [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt/) package. 
 Generating robots.txt using webpack.
+Why your need [robots.txt](https://support.google.com/webmasters/answer/6062608?hl=en)?
 
 ## Install
 
