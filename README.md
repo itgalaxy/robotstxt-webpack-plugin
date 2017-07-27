@@ -1,13 +1,13 @@
 # robotstxt-webpack-plugin
 
-[![NPM version](https://img.shields.io/npm/v/robotstxt-webpack-plugin.svg)](https://www.npmjs.org/package/robotstxt-webpack-plugin) 
-[![Travis Build Status](https://img.shields.io/travis/itgalaxy/robotstxt-webpack-plugin/master.svg?label=build)](https://travis-ci.org/itgalaxy/robotstxt-webpack-plugin) 
-[![dependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin) 
+[![NPM version](https://img.shields.io/npm/v/robotstxt-webpack-plugin.svg)](https://www.npmjs.org/package/robotstxt-webpack-plugin)
+[![Travis Build Status](https://img.shields.io/travis/itgalaxy/robotstxt-webpack-plugin/master.svg?label=build)](https://travis-ci.org/itgalaxy/robotstxt-webpack-plugin)
+[![dependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin)
 [![devDependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/dev-status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/itgalaxy/robotstxt-webpack-plugin.svg)](https://greenkeeper.io/)
 
-Webpack plugin for [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt/) package. 
-Generating robots.txt using webpack.
+Webpack plugin for [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt/) package.
+Generating `robots.txt` using webpack.
 Why your need [robots.txt](https://support.google.com/webmasters/answer/6062608?hl=en)?
 
 ## Install
