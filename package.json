@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
@@ -73,11 +73,11 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint:prettier": "prettier --list-different '{src,__tests__}/**/*.{js,jsx}' '*.js'",
+    "lint:prettier": "prettier --list-different '{src,__tests__}/**/*.{js,jsx}' '!src/__tests__/build/**' '*.js'",
     "lint:remark": "remark . -i .gitignore -f -q",
     "lint:eslint": "eslint . '.*.js' --ignore-path .gitignore --ext '.js,.jsx'",
     "lint": "npm-run-all -l -p 'lint:**'",
-    "fix:prettier": "prettier --write '{src,__tests__}/**/*.{js,jsx}' '*.js'",
+    "fix:prettier": "prettier --write '{src,__tests__}/**/*.{js,jsx}' '!src/__tests__/build/**' '*.js'",
     "fix:eslint": "eslint . '.*.js' --fix --ignore-path .gitignore --ext '.js,.jsx'",
     "fix": "npm-run-all -l -p 'fix:**'",
     "pretest": "npm run lint",

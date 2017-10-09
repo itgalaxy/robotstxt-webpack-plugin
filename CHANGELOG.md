@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
+## 3.0.0 - 2017-10-09
+
+- Changed: rename from `dest` to `filePath`.
+- Changed: `dest` should contain file name (example - `/path/to/robots.txt`).
+
 ## 2.0.0 - 2017-06-20
 
 - Chore: support `webpack` v3.

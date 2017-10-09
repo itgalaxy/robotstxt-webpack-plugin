@@ -1,10 +1,14 @@
 import nodeify from "nodeify";
-import path from "path";
 import robotstxt from "generate-robotstxt";
 
 export default class RobotstxtWebpackPlugin {
   constructor(options = {}) {
-    this.options = Object.assign({}, options);
+    this.options = Object.assign(
+      {
+        filePath: "robots.txt"
+      },
+      options
+    );
   }
 
   apply(compiler) {
@@ -14,15 +18,9 @@ export default class RobotstxtWebpackPlugin {
   }
 
   generate(compilation, callback) {
-    const { options } = this;
-
     return nodeify(
-      robotstxt(options).then(contents => {
-        const dest = options.dest
-          ? path.join(options.dest, "robots.txt")
-          : "robots.txt";
-
-        compilation.assets[dest] = {
+      robotstxt(this.options).then(contents => {
+        compilation.assets[this.options.filePath] = {
           size() {
             return Buffer.byteLength(this.source(), "utf8");
           },

@@ -47,7 +47,7 @@ export default {
 ## Options
 
 - `General options` - see [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
-- `dest` - (optional) directory which will be saved robots.txt (relatively of the option `output.path` value).
+- `filePath` - (optional) directory which will be saved robots.txt (should be contain full path include `robots.txt` name, example - `path/to/robots.txt`).
 
 ## Related
 
