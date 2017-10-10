@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "ava": "^0.22.0",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.9.0",
     "del-cli": "^1.1.0",
