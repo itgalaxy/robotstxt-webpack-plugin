@@ -38,7 +38,7 @@
     "node": ">= 4.3 < 5.0.0 || >= 5.10"
   },
   "dependencies": {
-    "generate-robotstxt": "^4.0.0",
+    "generate-robotstxt": "^5.0.0",
     "nodeify": "~1.0.0"
   },
   "devDependencies": {
