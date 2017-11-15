@@ -6,9 +6,10 @@
 [![devDependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/dev-status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/itgalaxy/robotstxt-webpack-plugin.svg)](https://greenkeeper.io)
 
-Webpack plugin for [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt/) package.
-Generating `robots.txt` using webpack.
-Why your need [robots.txt](https://support.google.com/webmasters/answer/6062608?hl=en)?
+Webpack plugin for
+[generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt/) package.
+Generating `robots.txt` using webpack. Why your need
+[robots.txt](https://support.google.com/webmasters/answer/6062608?hl=en)?
 
 ## Install
 
@@ -19,39 +20,38 @@ npm install --save-dev robotstxt-webpack-plugin
 ## Usage
 
 ```js
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
 
 const options = {}; // see options below
 
 module.exports = {
-  plugins: [
-    new RobotstxtPlugin(options)
-  ]
-}
+  plugins: [new RobotstxtPlugin(options)]
+};
 ```
 
 Or
 
 ```js
-import RobotstxtPlugin from 'robotstxt-webpack-plugin';
+import RobotstxtPlugin from "robotstxt-webpack-plugin";
 
 const options = {}; // see options below
 
 export default {
-  plugins: [
-    new RobotstxtPlugin(options)
-  ]
+  plugins: [new RobotstxtPlugin(options)]
 };
 ```
 
 ## Options
 
-- `General options` - see [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
-- `filePath` - (optional) path for robots.txt (should be contain full path include `robots.txt` file name, example - `path/to/robots.txt`).
+* `General options` - see
+  [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) options.
+* `filePath` - (optional) path for robots.txt (should be contain full path
+  include `robots.txt` file name, example - `path/to/robots.txt`).
 
 ## Related
 
-- [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) - api for this package.
+* [generate-robotstxt](https://github.com/itgalaxy/generate-robotstxt) - api for
+  this package.
 
 ## Contribution
 

@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
@@ -38,7 +38,7 @@
     "node": ">= 4.3 < 5.0.0 || >= 5.10"
   },
   "dependencies": {
-    "generate-robotstxt": "^4.0.0",
+    "generate-robotstxt": "^5.0.0",
     "nodeify": "~1.0.0"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "eslint": "^4.9.0",
     "eslint-plugin-ava": "^4.2.1",
     "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-itgalaxy": "^56.0.0",
+    "eslint-plugin-itgalaxy": "^57.0.0",
     "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-lodash": "^2.4.3",
@@ -58,15 +58,15 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-unicorn": "^2.1.2",
+    "eslint-plugin-unicorn": "^3.0.0",
     "npmpub": "^3.1.0",
     "npm-run-all": "^4.0.0",
     "nyc": "^11.0.0",
     "remark-cli": "^4.0.0",
-    "remark-preset-lint-itgalaxy": "^11.0.0",
+    "remark-preset-lint-itgalaxy": "^12.0.0",
     "webpack": "^3.0.0",
     "husky": "^0.14.0",
-    "lint-staged": "^4.0.0",
+    "lint-staged": "^5.0.0",
     "prettier": "^1.5.2"
   },
   "peerDependencies": {
@@ -74,11 +74,11 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint:prettier": "prettier --list-different '{src,__tests__}/**/*.{js,jsx}' '!src/__tests__/build/**' '*.js'",
+    "lint:prettier": "prettier --list-different '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
     "lint:remark": "remark . -i .gitignore -f -q",
     "lint:eslint": "eslint . '.*.js' --ignore-path .gitignore --ext '.js,.jsx'",
     "lint": "npm-run-all -l -p 'lint:**'",
-    "fix:prettier": "prettier --write '{src,__tests__}/**/*.{js,jsx}' '!src/__tests__/build/**' '*.js'",
+    "fix:prettier": "prettier --write '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
     "fix:eslint": "eslint . '.*.js' --fix --ignore-path .gitignore --ext '.js,.jsx'",
     "fix": "npm-run-all -l -p 'fix:**'",
     "pretest": "npm run lint",
