@@ -77,7 +77,7 @@
     "precommit": "lint-staged",
     "lint:prettify": "prettier --list-different '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
     "lint:remark": "remark . -i .gitignore -f -q",
-    "lint:eslint": "eslint . '.*.js' --ignore-path .gitignore --ext '.js,.jsx'",
+    "lint:eslint": "eslint . '.*.js' --report-unused-disable-directives --ignore-path .gitignore --ext '.js,.jsx'",
     "lint": "npm-run-all -l -p 'lint:**'",
     "prettify": "prettier --write '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
     "fix:eslint": "eslint . '.*.js' --fix --ignore-path .gitignore --ext '.js,.jsx'",

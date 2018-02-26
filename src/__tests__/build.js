@@ -1,5 +1,4 @@
 import RobotstxtPlugin from "../RobotstxtWebpackPlugin";
-// eslint-disable-next-line node/no-unpublished-import
 import test from "ava";
 import webpack from "webpack";
 import webpackConfigBase from "./configs/config-base";
@@ -7,7 +6,7 @@ import webpackConfigBase from "./configs/config-base";
 const robotstxtPluginBaseOptions = {};
 
 test.cb("should execute successfully", t => {
-  t.plan(4);
+  t.plan(5);
 
   const options = Object.assign({}, robotstxtPluginBaseOptions);
 
@@ -18,6 +17,7 @@ test.cb("should execute successfully", t => {
       throw error;
     }
 
+    t.true(stats.compilation.warnings.length === 0, "no compilation warnings");
     t.true(stats.compilation.errors.length === 0, "no compilation error");
     t.true(
       stats.compilation.assets["robots.txt"] !== null,
@@ -31,7 +31,7 @@ test.cb("should execute successfully", t => {
 });
 
 test.cb("should execute successfully without options", t => {
-  t.plan(4);
+  t.plan(5);
 
   webpackConfigBase.plugins = [new RobotstxtPlugin()];
 
@@ -40,6 +40,7 @@ test.cb("should execute successfully without options", t => {
       throw error;
     }
 
+    t.true(stats.compilation.warnings.length === 0, "no compilation warnings");
     t.true(stats.compilation.errors.length === 0, "no compilation error");
     t.true(
       stats.compilation.assets["robots.txt"] !== null,
@@ -53,7 +54,7 @@ test.cb("should execute successfully without options", t => {
 });
 
 test.cb("should execute successfully using `dest` option", t => {
-  t.plan(4);
+  t.plan(5);
 
   const options = Object.assign({}, robotstxtPluginBaseOptions);
 
@@ -65,6 +66,7 @@ test.cb("should execute successfully using `dest` option", t => {
       throw error;
     }
 
+    t.true(stats.compilation.warnings.length === 0, "no compilation warnings");
     t.true(stats.compilation.errors.length === 0, "no compilation error");
     t.true(
       stats.compilation.assets[options.filePath] !== null,
@@ -78,7 +80,7 @@ test.cb("should execute successfully using `dest` option", t => {
 });
 
 test.cb("should throw error on invalid `generate-robotstxt` options", t => {
-  t.plan(1);
+  t.plan(2);
 
   const options = Object.assign({}, robotstxtPluginBaseOptions);
 
@@ -91,6 +93,7 @@ test.cb("should throw error on invalid `generate-robotstxt` options", t => {
       throw error;
     }
 
+    t.true(stats.compilation.warnings.length === 0, "no compilation warnings");
     t.true(stats.compilation.errors.length === 1, "compilation error");
     t.end();
   });

@@ -2,6 +2,7 @@ import path from "path";
 
 export default {
   entry: path.resolve(__dirname, "../fixtures/entry.js"),
+  mode: "development",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "../build")
