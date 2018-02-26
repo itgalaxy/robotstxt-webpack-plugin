@@ -12,9 +12,17 @@ export default class RobotstxtWebpackPlugin {
   }
 
   apply(compiler) {
-    compiler.plugin("emit", (compilation, callback) =>
-      this.generate(compilation, callback)
-    );
+    const generateFn = (compilation, callback) => {
+      this.generate(compilation, callback);
+    };
+
+    if (compiler.hooks) {
+      const plugin = { name: "RobotstxtPlugin" };
+
+      compiler.hooks.emit.tapAsync(plugin, generateFn);
+    } else {
+      compiler.plugin("emit", generateFn);
+    }
   }
 
   generate(compilation, callback) {
