@@ -20,8 +20,6 @@ To begin, you'll need to install `robotstxt-webpack-plugin`:
 npm install --save-dev robotstxt-webpack-plugin
 ```
 
-## Usage
-
 **webpack.config.js**
 
 ```js
