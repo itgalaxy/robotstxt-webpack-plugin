@@ -4,16 +4,16 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
-## 5.0.0
+## 5.0.0 - 2019-01-09
 
 ### BREAKING CHANGE
 
-- Feature: rename `RobotstxtWebpackPlugin` tp `RobotstxtPlugin`.
-- Feature: exports plugin as `cjs` (no need use `default` for `require` in `webpack.config.js`).
+- Feature: rename `RobotstxtWebpackPlugin` to `RobotstxtPlugin`.
+- Feature: exports plugin as `cjs` by default (no need use `default` for `require` in `webpack.config.js`).
 - Chore: minimum require `webpack` version is `4`.
 - Chore: minimum require `nodejs` version is `6`.
 
-## 4.0.1
+## 4.0.1 - 2018-02-26
 
 - Fixed: `tapable` deprecation warnings (`webpack >= v4.0.0`).
 
