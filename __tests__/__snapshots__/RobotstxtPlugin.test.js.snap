@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plugin should execute successfully 1`] = `
+"User-agent: *
+Allow: /
+"
+`;
+
+exports[`plugin should execute successfully with \`filePath\` option 1`] = `
+"User-agent: *
+Allow: /
+"
+`;
+
+exports[`plugin should execute successfully with \`filePath\` option: errors 1`] = `Array []`;
+
+exports[`plugin should execute successfully with \`filePath\` option: warnings 1`] = `Array []`;
+
+exports[`plugin should execute successfully: errors 1`] = `Array []`;
+
+exports[`plugin should execute successfully: warnings 1`] = `Array []`;
+
+exports[`plugin should throw error on invalid \`generate-robotstxt\` options: errors 1`] = `
+Array [
+  [Error: Options \`policy\` must be array],
+]
+`;
+
+exports[`plugin should throw error on invalid \`generate-robotstxt\` options: warnings 1`] = `Array []`;

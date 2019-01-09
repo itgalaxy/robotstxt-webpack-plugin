@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
@@ -29,80 +29,79 @@
   "bugs": {
     "url": "https://github.com/itgalaxy/robotstxt-webpack-plugin/issues"
   },
-  "main": "dist/RobotstxtWebpackPlugin.js",
+  "main": "dist/cjs.js",
   "files": [
-    "dist",
-    "!**/__tests__"
+    "dist"
   ],
   "engines": {
-    "node": ">= 4.3 < 5.0.0 || >= 5.10"
+    "node": ">= 6.9.0"
   },
   "dependencies": {
-    "generate-robotstxt": "^5.0.0",
-    "nodeify": "~1.0.0"
+    "generate-robotstxt": "^6.0.0",
+    "webpack-sources": "^1.3.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.9.0",
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "del": "^3.0.0",
     "del-cli": "^1.1.0",
-    "eslint": "^4.9.0",
-    "eslint-plugin-ava": "^4.2.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-itgalaxy": "^65.0.0",
-    "eslint-plugin-jest": "^21.2.0",
-    "eslint-plugin-jsx-a11y": "^6.0.0",
-    "eslint-plugin-lodash": "^2.4.3",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-prettier": "^2.1.2",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-unicorn": "^4.0.2",
-    "npmpub": "^3.1.0",
+    "eslint": "^5.12.0",
+    "eslint-plugin-ava": "^5.1.1",
+    "eslint-plugin-html": "^5.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-itgalaxy": "^96.0.0",
+    "eslint-plugin-jest": "^22.1.3",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-lodash": "^5.1.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-unicorn": "^6.0.1",
+    "memory-fs": "^0.4.1",
+    "npmpub": "^4.1.0",
     "npm-run-all": "^4.0.0",
-    "nyc": "^11.0.0",
-    "remark-cli": "^5.0.0",
-    "remark-preset-lint-itgalaxy": "^12.0.0",
+    "remark-cli": "^6.0.1",
+    "remark-preset-lint-itgalaxy": "^13.0.0",
     "webpack": "^4.0.0",
-    "husky": "^0.14.0",
-    "lint-staged": "^7.0.0",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.5.2"
   },
   "peerDependencies": {
-    "webpack": "^1.13.2 || ^2.0.0 || ^3.0.0 || ^4.0.0"
+    "webpack": "^4.0.0"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "lint:prettify": "prettier --list-different '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
     "lint:remark": "remark . -i .gitignore -f -q",
-    "lint:eslint": "eslint . '.*.js' --report-unused-disable-directives --ignore-path .gitignore --ext '.js,.jsx'",
+    "lint:eslint": "eslint . --cache --report-unused-disable-directives --ignore-path .gitignore --ext '.js,.mjs,.jsx'",
     "lint": "npm-run-all -l -p 'lint:**'",
-    "prettify": "prettier --write '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
-    "fix:eslint": "eslint . '.*.js' --fix --ignore-path .gitignore --ext '.js,.jsx'",
+    "prettify": "npm run lint:prettier -- --write",
+    "fix:eslint": "npm run lint:eslint -- --fix",
     "fix": "npm-run-all -l prettify -p 'fix:**'",
     "pretest": "npm run lint",
-    "test-only": "nyc ava --verbose '**/__tests__/*.js'",
+    "test-only": "jest --coverage",
     "test": "npm run test-only",
     "prebuild": "del dist",
     "build": "babel src --out-dir dist --ignore /__tests__/",
     "prepublish": "npm run build",
     "release": "npmpub"
   },
-  "ava": {
-    "require": "babel-register",
-    "concurrency": 5,
-    "babel": "inherit"
-  },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
-            "node": "4.3"
-          }
+            "node": "6.9.0"
+          },
+          "useBuiltIns": "usage"
         }
       ]
     ]
@@ -111,13 +110,10 @@
     "parserOptions": {
       "sourceType": "script"
     },
-    "rules": {
-      "sort-keys": "off"
-    },
     "extends": [
-      "plugin:itgalaxy/ava",
+      "plugin:itgalaxy/node",
       "plugin:itgalaxy/esnext",
-      "plugin:itgalaxy/node"
+      "plugin:itgalaxy/jest"
     ],
     "overrides": [
       {
@@ -129,7 +125,7 @@
           "sourceType": "module"
         },
         "rules": {
-          "node/no-unsupported-features": "off"
+          "node/no-unsupported-features/es-syntax": "off"
         }
       }
     ],
@@ -138,6 +134,13 @@
   "remarkConfig": {
     "plugins": [
       "remark-preset-lint-itgalaxy"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/",
+      "helpers.js"
     ]
   }
 }
