@@ -17,23 +17,21 @@ cache:
 
 matrix:
   include:
-    - node_js: '9'
+    - node_js: '11'
       script: npm run pretest
       env: CI=pretest
-    - node_js: '9'
-      script: npm run test-only
-      env: CI=tests 9
-    - node_js: '8'
-      script: npm run test-only
-      env: CI=tests 8
     - node_js: '6'
       script: npm run test-only
       env: CI=tests 6
-    # Curretly we support webpack@3, but webpack@4 doesn't support node v4
-    # - node_js: '4'
-    #  script: npm run test-only
-    #  env: CI=tests 4
-    #  sudo: required
+    - node_js: '8'
+      script: npm run test-only
+      env: CI=tests 8
+    - node_js: '10'
+      script: npm run test-only
+      env: CI=tests 10
+    - node_js: '11'
+      script: npm run test-only
+      env: CI=tests 11
 
 before_install:
   - npm install -g npm@latest
