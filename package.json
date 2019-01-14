@@ -62,7 +62,7 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.3",
-    "eslint-plugin-unicorn": "^6.0.1",
+    "eslint-plugin-unicorn": "^7.0.0",
     "memory-fs": "^0.4.1",
     "npmpub": "^4.1.0",
     "npm-run-all": "^4.0.0",
