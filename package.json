@@ -67,7 +67,7 @@
     "npmpub": "^4.1.0",
     "npm-run-all": "^4.0.0",
     "remark-cli": "^6.0.1",
-    "remark-preset-lint-itgalaxy": "^13.0.0",
+    "remark-preset-lint-itgalaxy": "^14.0.0",
     "webpack": "^4.0.0",
     "husky": "^1.3.1",
     "jest": "^23.6.0",
