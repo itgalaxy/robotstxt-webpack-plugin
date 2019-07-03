@@ -59,6 +59,5 @@ function compile(fixture, config = {}, options = {}) {
   );
 }
 
-module.exports = {
-  webpack: compile
-};
+// eslint-disable-next-line import/prefer-default-export
+export { compile as webpack };

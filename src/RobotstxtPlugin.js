@@ -14,16 +14,18 @@ export default class RobotstxtPlugin {
   apply(compiler) {
     const plugin = { name: "RobotstxtPlugin" };
 
-    compiler.hooks.emit.tapPromise(plugin, compilation =>
-      robotstxt(this.options)
-        .then(contents => {
-          compilation.assets[this.options.filePath] = new RawSource(contents);
+    compiler.hooks.compilation.tap(plugin, compilation => {
+      compilation.hooks.additionalAssets.tapPromise(plugin, () =>
+        robotstxt(this.options)
+          .then(contents => {
+            compilation.assets[this.options.filePath] = new RawSource(contents);
 
-          return contents;
-        })
-        .catch(error => {
-          compilation.errors.push(error);
-        })
-    );
+            return contents;
+          })
+          .catch(error => {
+            compilation.errors.push(error);
+          })
+      );
+    });
   }
 }
