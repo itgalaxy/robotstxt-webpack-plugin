@@ -2,7 +2,6 @@
 [![Travis Build Status](https://img.shields.io/travis/itgalaxy/robotstxt-webpack-plugin/master.svg?label=build)](https://travis-ci.org/itgalaxy/robotstxt-webpack-plugin)
 [![dependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin)
 [![devDependencies Status](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin/dev-status.svg)](https://david-dm.org/itgalaxy/robotstxt-webpack-plugin?type=dev)
-[![Greenkeeper badge](https://badges.greenkeeper.io/itgalaxy/robotstxt-webpack-plugin.svg)](https://greenkeeper.io)
 
 # robotstxt-webpack-plugin
 

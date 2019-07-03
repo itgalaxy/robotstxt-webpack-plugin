@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
@@ -34,113 +34,62 @@
     "dist"
   ],
   "engines": {
-    "node": ">= 6.9.0"
+    "node": ">= 8.9.0"
   },
   "dependencies": {
-    "generate-robotstxt": "^6.0.0",
+    "generate-robotstxt": "^7.1.0",
     "webpack-sources": "^1.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "del": "^3.0.0",
-    "del-cli": "^1.1.0",
-    "eslint": "^5.12.0",
-    "eslint-plugin-ava": "^5.1.1",
-    "eslint-plugin-html": "^5.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-itgalaxy": "^96.0.0",
-    "eslint-plugin-jest": "^22.1.3",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "del": "^5.0.0",
+    "del-cli": "^2.0.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-ava": "^7.1.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-itgalaxy": "^103.0.0",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-markdown": "^1.0.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.12.3",
-    "eslint-plugin-unicorn": "^6.0.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.0.2",
     "memory-fs": "^0.4.1",
-    "npmpub": "^4.1.0",
-    "npm-run-all": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
     "remark-cli": "^6.0.1",
-    "remark-preset-lint-itgalaxy": "^13.0.0",
-    "webpack": "^4.0.0",
-    "husky": "^1.3.1",
-    "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.5.2"
+    "remark-preset-lint-itgalaxy": "^14.0.0",
+    "standard-version": "^6.0.1",
+    "webpack": "^4.35.2"
   },
   "peerDependencies": {
     "webpack": "^4.0.0"
   },
   "scripts": {
-    "lint:prettify": "prettier --list-different '{src,__tests__}/**/*.{js,jsx,md}' '!src/__tests__/build/**' '*.{js,md}'",
-    "lint:remark": "remark . -i .gitignore -f -q",
-    "lint:eslint": "eslint . --cache --report-unused-disable-directives --ignore-path .gitignore --ext '.js,.mjs,.jsx'",
-    "lint": "npm-run-all -l -p 'lint:**'",
-    "prettify": "npm run lint:prettier -- --write",
-    "fix:eslint": "npm run lint:eslint -- --fix",
-    "fix": "npm-run-all -l prettify -p 'fix:**'",
-    "pretest": "npm run lint",
-    "test-only": "jest --coverage",
-    "test": "npm run test-only",
     "prebuild": "del dist",
     "build": "babel src --out-dir dist --ignore /__tests__/",
-    "prepublish": "npm run build",
-    "release": "npmpub"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "6.9.0"
-          },
-          "useBuiltIns": "usage"
-        }
-      ]
-    ]
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "sourceType": "script"
-    },
-    "extends": [
-      "plugin:itgalaxy/node",
-      "plugin:itgalaxy/esnext",
-      "plugin:itgalaxy/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/**/*.js",
-          "src/**/*.js"
-        ],
-        "parserOptions": {
-          "sourceType": "module"
-        },
-        "rules": {
-          "node/no-unsupported-features/es-syntax": "off"
-        }
-      }
-    ],
-    "root": true
-  },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-itgalaxy"
-    ]
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/fixtures/",
-      "helpers.js"
-    ]
+    "lint:prettier": "prettier --list-different '{src,__tests__}/**/*.{js,mjs,jsx,md,yml,yaml}' '*.{js,mjs,md,yml,yaml}' '!CHANGELOG.md'",
+    "lint:eslint": "eslint . --cache --report-unused-disable-directives --ignore-path .gitignore --ext '.js,.mjs,.jsx'",
+    "lint:remark": "remark . -i .gitignore -f -q",
+    "lint": "npm-run-all -l -p 'lint:**'",
+    "prettier": "npm run lint:prettier -- --write",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix": "npm-run-all -l prettify -p 'fix:**'",
+    "prepare": "npm run build",
+    "release": "standard-version",
+    "test:only": "jest",
+    "test:coverage": "jest --coverage",
+    "pretest": "npm run lint",
+    "test": "npm run test:coverage"
   }
 }
