@@ -12,13 +12,20 @@ export default class RobotstxtPlugin {
   }
 
   apply(compiler) {
-    const plugin = { name: "RobotstxtPlugin" };
+    const plugin = { name: this.constructor.name };
 
     compiler.hooks.compilation.tap(plugin, compilation => {
       compilation.hooks.additionalAssets.tapPromise(plugin, () =>
         robotstxt(this.options)
           .then(contents => {
-            compilation.assets[this.options.filePath] = new RawSource(contents);
+            const source = new RawSource(contents);
+
+            if (compilation.emitAsset) {
+              compilation.emitAsset(this.options.filePath, source);
+            } else {
+              // Remove this after drop support for webpack@4
+              compilation.assets[this.options.filePath] = source;
+            }
 
             return contents;
           })

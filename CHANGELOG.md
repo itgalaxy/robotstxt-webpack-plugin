@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org).
 
+## 7.0.0 - 2019-11-05
+
+- Changed: minimum require Node.js version is `10.13.0`.
+
 ## 6.0.0 - 2019-07-03
 
 - Changed: use `additionalAssets` hook for adding assets.
