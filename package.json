@@ -73,7 +73,7 @@
     "webpack": "^4.41.2"
   },
   "peerDependencies": {
-    "webpack": "^4.0.0"
+    "webpack": ">= 4.0.0"
   },
   "scripts": {
     "prebuild": "del dist",
