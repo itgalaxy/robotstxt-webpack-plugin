@@ -1,8 +1,14 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-This project adheres to [Semantic Versioning](http://semver.org).
+### 7.0.1 (2022-08-18)
+
+
+### Bug Fixes
+
+* `tapable` deprecation warnings (`webpack >= v4.0.0`) ([40b6776](https://github.com/itgalaxy/robotstxt-webpack-plugin/commit/40b677646fd55035d4a763c0dad00159dba315bf))
+* bump webpack peerDependency ([#122](https://github.com/itgalaxy/robotstxt-webpack-plugin/issues/122)) ([fb4ab6e](https://github.com/itgalaxy/robotstxt-webpack-plugin/commit/fb4ab6eb168ea2de92d4b02d05497e829d6220dc))
 
 ## 7.0.0 - 2019-11-05
 
