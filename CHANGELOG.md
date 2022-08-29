@@ -1,8 +1,18 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-This project adheres to [Semantic Versioning](http://semver.org).
+## [8.0.0](https://github.com/itgalaxy/robotstxt-webpack-plugin/compare/v7.0.0...v8.0.0) (2022-08-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum supported webpack version is `5`
+* minimum supported Node.js version is `14.15.0`
+
+### Bug Fixes
+
+* compatibility with webpack v5 ([#131](https://github.com/itgalaxy/robotstxt-webpack-plugin/issues/131)) ([ee22312](https://github.com/itgalaxy/robotstxt-webpack-plugin/commit/ee22312daad1f0f24e2cd390943721bec49151cf))
 
 ## 7.0.0 - 2019-11-05
 

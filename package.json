@@ -1,6 +1,6 @@
 {
   "name": "robotstxt-webpack-plugin",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "A webpack plugin to output a robots.txt file",
   "license": "MIT",
   "author": "itgalaxy <development@itgalaxy.company>",
