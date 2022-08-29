@@ -34,20 +34,19 @@
     "dist"
   ],
   "engines": {
-    "node": ">= 10.13.0"
+    "node": ">= 14.15.0"
   },
   "dependencies": {
-    "generate-robotstxt": "^8.0.0",
-    "webpack-sources": "^1.4.3"
+    "generate-robotstxt": "^8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
-    "del": "^5.1.0",
-    "del-cli": "^3.0.0",
+    "babel-jest": "^29.0.1",
+    "del": "^6.1.1",
+    "del-cli": "^5.0.0",
     "eslint": "^6.6.0",
     "eslint-plugin-ava": "^9.0.0",
     "eslint-plugin-html": "^6.0.0",
@@ -62,18 +61,18 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-unicorn": "^12.1.0",
     "husky": "^3.0.9",
-    "jest": "^24.9.0",
+    "jest": "^29.0.1",
     "lint-staged": "^9.4.2",
     "memory-fs": "^0.5.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
-    "remark-cli": "^7.0.0",
-    "remark-preset-lint-itgalaxy": "^15.0.0",
-    "standard-version": "^7.0.0",
-    "webpack": "^4.41.2"
+    "prettier": "^2.7.1",
+    "remark-cli": "^11.0.0",
+    "remark-preset-lint-itgalaxy": "^16.0.0",
+    "standard-version": "^9.5.0",
+    "webpack": "^5.74.0"
   },
   "peerDependencies": {
-    "webpack": ">= 4.0.0"
+    "webpack": ">= 5.0.0"
   },
   "scripts": {
     "prebuild": "del dist",

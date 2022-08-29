@@ -4,7 +4,7 @@ module.exports = {
   extends: [
     "plugin:itgalaxy/script",
     "plugin:itgalaxy/esnext",
-    "plugin:itgalaxy/node"
+    "plugin:itgalaxy/node",
   ],
   overrides: [
     // Source
@@ -12,7 +12,7 @@ module.exports = {
       extends: ["plugin:itgalaxy/dirty"],
       // Exclude nested tests
       excludedFiles: ["**/__tests__/**/*", "**/__mocks__/**/*", "**/*.md"],
-      files: ["src/**/*"]
+      files: ["src/**/*"],
     },
 
     // Jest
@@ -22,8 +22,8 @@ module.exports = {
       files: ["**/__tests__/**/*", "**/__mocks__/**/*"],
       rules: {
         // Allow to use `console` (example - `mocking`)
-        "no-console": "off"
-      }
+        "no-console": "off",
+      },
     },
 
     // Markdown
@@ -31,7 +31,7 @@ module.exports = {
       extends: [
         // Documentation files can contain ECMA and CommonJS modules
         "plugin:itgalaxy/dirty",
-        "plugin:itgalaxy/markdown"
+        "plugin:itgalaxy/markdown",
       ],
       files: ["**/*.md"],
       rules: {
@@ -39,9 +39,9 @@ module.exports = {
         "no-console": "off",
         "import/no-unresolved": "off",
         "node/no-unpublished-require": "off",
-        "node/no-unpublished-import": "off"
-      }
-    }
+        "node/no-unpublished-import": "off",
+      },
+    },
   ],
-  root: true
+  root: true,
 };
