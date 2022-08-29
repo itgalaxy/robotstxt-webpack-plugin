@@ -1,11 +1,10 @@
 import robotstxt from "generate-robotstxt";
-import { RawSource } from "webpack-sources";
 
 export default class RobotstxtPlugin {
   constructor(options = {}) {
     this.options = Object.assign(
       {
-        filePath: "robots.txt"
+        filePath: "robots.txt",
       },
       options
     );
@@ -14,11 +13,11 @@ export default class RobotstxtPlugin {
   apply(compiler) {
     const plugin = { name: this.constructor.name };
 
-    compiler.hooks.compilation.tap(plugin, compilation => {
+    compiler.hooks.compilation.tap(plugin, (compilation) => {
       compilation.hooks.additionalAssets.tapPromise(plugin, () =>
         robotstxt(this.options)
-          .then(contents => {
-            const source = new RawSource(contents);
+          .then((contents) => {
+            const source = new compiler.webpack.sources.RawSource(contents);
 
             if (compilation.emitAsset) {
               compilation.emitAsset(this.options.filePath, source);
@@ -29,7 +28,7 @@ export default class RobotstxtPlugin {
 
             return contents;
           })
-          .catch(error => {
+          .catch((error) => {
             compilation.errors.push(error);
           })
       );

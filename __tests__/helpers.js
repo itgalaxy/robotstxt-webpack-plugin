@@ -4,19 +4,19 @@ import del from "del";
 import webpack from "webpack";
 import RobotstxtPlugin from "../src/RobotstxtPlugin";
 
-const outputConfig = config => ({
+const outputConfig = (config) => ({
   path: path.resolve(
     __dirname,
     `../outputs/${config.output ? config.output : ""}`
   ),
-  filename: "[name].bundle.js"
+  filename: "[name].bundle.js",
 });
 
-const moduleConfig = config => ({
-  rules: config.rules ? config.rules : []
+const moduleConfig = (config) => ({
+  rules: config.rules ? config.rules : [],
 });
 
-const pluginsConfig = config =>
+const pluginsConfig = (config) =>
   [].concat(
     config.plugins || [new RobotstxtPlugin(config.pluginOptions || {})]
   );
@@ -26,12 +26,12 @@ function compile(fixture, config = {}, options = {}) {
   // eslint-disable-next-line no-param-reassign
   config = {
     mode: "development",
-    devtool: config.devtool || "sourcemap",
+    devtool: false,
     context: path.resolve(__dirname, "fixtures"),
     entry: path.resolve(__dirname, "fixtures", fixture),
     output: outputConfig(config),
     module: moduleConfig(config),
-    plugins: pluginsConfig(config)
+    plugins: pluginsConfig(config),
   };
 
   // Compiler Options
@@ -54,7 +54,7 @@ function compile(fixture, config = {}, options = {}) {
         return reject(error);
       }
 
-      return resolve(stats);
+      return resolve({ stats, compiler });
     })
   );
 }
